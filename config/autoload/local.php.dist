@@ -1,0 +1,28 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'api-tools-mvc-auth' => [
+        'authentication' => [
+            'adapters' => [
+                'oauth2_mongo' => [
+                    'adapter' => Laminas\ApiTools\MvcAuth\Authentication\OAuth2Adapter::class,
+                    'storage' => [
+                        'adapter' => 'mongo',
+                        // production
+                        'dsn'      => 'mongodb://rekod-mongo:27017',
+                        'database' => 'arsiprekod',
+                        'route'    => '/oauth',
+                        'options'  => [
+                            'username'      => 'username',
+                            'password'      => 'password',
+                            'authMechanism' => 'SCRAM-SHA-1',
+                            'authSource'    => 'arsiprekod',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+];

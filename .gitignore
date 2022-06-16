@@ -1,0 +1,9 @@
+.vagrant/
+/composer.lock
+/phpunit.xml
+/vendor/
+/bin/
+config/development.config.php
+.idea/
+.phpcs-cache
+.php_cs.cache
